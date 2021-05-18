@@ -11,6 +11,7 @@ Paint project is a website that displays paintings
 - Symfomy CLI
 - Docker
 - Docker-Compose
+- NodeJs + npm
 
 You can check all the getting started whitout Docker
 
@@ -21,6 +22,9 @@ symfony check:requirements
 ### Launch Development Environment
 
 ```bash
+composer install
+npm install
+npm run build
 docker-compose up -d
 symfony serve -d
 ```
