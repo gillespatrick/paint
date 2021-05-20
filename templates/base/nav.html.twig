@@ -9,7 +9,7 @@
 			<div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto pt-2 pt-lg-0 font-base">
 					<li class="nav-item px-2" data-anchor="data-anchor">
-						<a class="nav-link fw-medium " href="#home">Home</a>
+						<a class="nav-link fw-medium " href="{{path ('home')}}">Home</a>
 					</li>
 					<li class="nav-item px-2" data-anchor="data-anchor">
 						<a class="nav-link" href="#service">Realisations</a>
@@ -24,6 +24,12 @@
 						<a class="nav-link" href="#contact">Contact</a>
 					</li>
 				</ul>
+				<form class="ps-lg-5">
+					<a class="btn btn-link text-primary fw-bold order-1 order-lg-0" href="{{path ('login')}}" type="button">Sign in</a>
+					<button class="btn btn-light shadow-klean order-0" type="submit">
+						<span class="text-gradient fw-bold">Sign Up</span>
+					</button>
+				</form>
 			</div>
 		</div>
 	</nav>
