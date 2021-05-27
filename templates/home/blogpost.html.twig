@@ -22,9 +22,9 @@
 			<div class="col-12">
 
 				<div class="row align-items-center circle-blend circle-blend-right circle-warning">
-					
-          {% for blogposts in blogposts %}
-            <div class="col-md-6 col-lg-4 mb-4 undefined">
+
+					{% for blogposts in blogposts %}
+						<div class="col-md-6 col-lg-4 mb-4 undefined">
 							<div class="card card-bg p-3 h-100">
 								<div class="card-body">
 									<h6 class="text-gradient fs--1 fw-bold">{{blogposts.title}}</h6>
@@ -37,23 +37,20 @@
 												<span>{{blogposts.createAt | date('m/d/Y')}}</span>
 											</p>
 										</div>
-									</div>
+									</div>              
 								</div>
 							</div>
 						</div>
 					{% endfor %}
-			
-      	</div>
+
+					<div class="col-auto mx-auto my-5">
+						<button class="btn btn-lg btn-klean-outline order-0 fs-0" type="submit">
+							<span class="text-gradient fw-bold">View all</span>
+						</button>
+					</div>
+				</div>
 			</div>
 		</div>
-
-
-		<div class="col-auto mx-auto my-5">
-			<button class="btn btn-lg btn-klean-outline order-0 fs-0" type="submit">
-				<span class="text-gradient fw-bold">View all</span>
-			</button>
-		</div>
-
 	</div><!-- end of .container--></section>
 <!-- <section> close ============================-->
 <!-- ============================================-->
