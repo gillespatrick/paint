@@ -29,6 +29,12 @@ docker-compose up -d
 symfony serve -d
 ```
 
+### Add the Data Test
+
+```bash
+symfony console doctrine:fixrures:load
+```
+
 ### Launch Tests (It is not working)
 
 ```bash
