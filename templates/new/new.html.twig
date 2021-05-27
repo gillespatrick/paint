@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello NewController!
+{% endblock %}
+
+{% block body %}
+	<section class="py-5" id="blog">
+
+		<div class="container container-md-fluid">
+			<div class="bg-holder" style="background-image:url(img/illustrations/blog-bg.png);background-position:left top;background-size:auto;margin-top:-23px;"></div>
+			<!--/.bg-holder-->
+
+			<div class="bg-holder" style="background-image:url(img/illustrations/blog-bg-1.png);background-position:right bottom;background-size:auto;margin-top:-66px;"></div>
+			<!--/.bg-holder-->
+
+			<div class="row">
+				<div class="col-lg-7 col-xxl-5 mx-auto text-center mb-6">
+					<h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Blog post</h5>
+					<p class="mb-0">Klean is an elegant HTML5 template and a perfect starting point for your next SaaS oriented site, carefully curated by
+						<span class="fw-bold">ThemeWagon</span>
+					</p>
+				</div>
+			</div>
+
+
+			<div class="row flex-center h-100 circle-blend circle-blend-left circle-cyan">
+
+				<div class="col-12">
+
+					<div class="row align-items-center circle-blend circle-blend-right circle-warning">
+
+						{% for blogposts in blogposts %}
+							<div class="col-md-6 col-lg-4 mb-4 undefined">
+								<div class="card card-bg p-3 h-100">
+									<div class="card-body">
+										<h6 class="text-gradient fs--1 fw-bold">{{blogposts.title}}</h6>
+										<hr class="text-100"/>
+										<h5 class="fw-bold lh-base fs-0 text-700">{{blogposts.content | u.truncate(150,'...',false)}}</h5>
+										<div class="d-flex align-items-center">
+											<div class="my-3 fs--1">
+
+												<p class="fw-normal mb-0">Published,
+													<span>{{blogposts.createAt | date('m/d/Y')}}</span>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="col-auto mx-auto my-5 btn  order-0 fs-0">
+					{% do blogposts.setPageRange(2) %}
+					{{knp_pagination_render(blogposts,'base/pagination.html.twig')}}
+				</div>
+			</div>
+		</div><!-- end of .container--></section>
+	<!-- <section> close ============================-->
+	<!-- ============================================-->
+
+{% endblock %}
