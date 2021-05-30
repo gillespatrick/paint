@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}About Me
+{% endblock %}
+
+{% block body %}
+	<section id="home">
+		<div class="bg-holder d-none d-md-block bg-size" style="background-image:url();background-position:right bottom;"></div>
+		<!--/.bg-holder-->
+
+		<div class="bg-holder" style="background-image:url(/img/gallery/gilles.png);background-position:center;background-size:contain;"></div>
+		<!--/.bg-holder-->
+
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-7 col-lg-6 py-6 text-sm-start text-center">
+					<h1 class="fw-bold display-4 fs-4 fs-lg-6 fs-xxl-7 text-gradient">
+						Gilles Patrick Ngondo</h1>
+					<h1 class="text-700"></h1>
+					<p class="mb-5 fs-0">I am Gilles  from the US! I love web programming
+						<span class="fw-bold text-primary">(Backend)</span>, new technologies, playing sports, reading,
+						<br/>watching movies and learning new things! Please feel free to contact me or take a look at my past work below.</p>
+					<a class="btn hover-top btn-glow btn-klean" href="{{path ('production')}}">Click Me</a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
