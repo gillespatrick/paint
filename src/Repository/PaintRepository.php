@@ -3,8 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Paint;
+use App\Entity\Category;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Flex\Path;
 
 /**
  * @method Paint|null find($id, $lockMode = null, $lockVersion = null)
@@ -28,23 +30,25 @@ class PaintRepository extends ServiceEntityRepository
                     ;
     }
 
-    // /**
-    //  * @return Paint[] Returns an array of Paint objects
-    //  */
-    /*
-    public function findByExampleField($value)
+
+   
+    public function findAllPortfolio(Category $category)
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
+            ->where(':category MEMBER OF p.category')
+            ->andWhere('p.portfolio = :TRUE')
+            ->setParameter('category', $category)
             ->getQuery()
-            ->getResult()
+           
         ;
     }
-    */
 
+    
+
+
+     /**
+     * @return Paint[] return an array of penit object
+     */
     /*
     public function findOneBySomeField($value): ?Paint
     {

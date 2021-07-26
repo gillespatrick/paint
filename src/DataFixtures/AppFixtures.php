@@ -39,7 +39,7 @@ class AppFixtures extends Fixture
               -> setInstagram('Instagram')
               -> setRoles(['ROLE_PAINT']);
 
-              $password = $this-> encoder -> encodePassword($user,'passord');
+              $password = $this-> encoder -> encodePassword($user,'password');
               $user -> setPassword($password);
 
 
