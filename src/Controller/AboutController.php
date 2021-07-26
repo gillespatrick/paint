@@ -13,13 +13,15 @@ class AboutController extends AbstractController
     /**
      * @Route("/About", name="about")
      */
-    public function index(): Response
+    public function index(UserRepository $userRepo): Response
     {
-     
-       // $paint = $userRepository -> find($firstname);
+
+        // $paint = $userRepo -> find($firstname);
+        $user = $userRepo->findAll();
         return $this->render('about/about.html.twig', [
-           // 'paint' => $userRepository -> getPaint(),
-           
+            //'paint' => $userRepo->getPaint()
+            'user' => $user
+
         ]);
     }
 }
