@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Paint;
 use App\Repository\PaintRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -27,4 +28,21 @@ class ProductionController extends AbstractController
             'paints' => $paints,
         ]);
     }
+
+
+    /**
+     * @Route ("/Achievement/{slug}", name = "detail_achiev")
+     */
+
+    public function details(Paint $paint): Response
+    {
+      
+        return $this->render('production/details.html.twig', [
+            'paint' => $paint,
+        ]);
+    }
+
+
+
+
 }
